@@ -102,7 +102,7 @@ Código:
 
      {
 
-         Console.WriteLine("Seu nome é " + nome + ", você tem " + idade + " anos, sua altura é " + altura + " metros, você é do sexo " + sexo + " e você não é um estudante.");
+         Console.WriteLine("Seu nome é " + nome + ", você tem " + idade + " anos, sua altura é " + altura + " metros, você é do genero " + genero + " e você não é um estudante.");
 
      }
 
