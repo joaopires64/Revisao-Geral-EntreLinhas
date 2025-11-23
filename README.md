@@ -343,17 +343,116 @@ Codigo:
 
 ### Exercício n° 4
 
+Vamos a um exercício bem simples de modularização, nesse progarma vamos escrever uma frasem e temos a opção de adicionar mais uma frase a ela ou simplesmente repeti-la quanata vezes solicitadas
+
+Código:
 
 
-modularização (metodos, função  e procedimento)
-
+    using System;
+    
+    class Program
+    {
+        /*Essa função foi declarada no Main, qual o nome que foi declarado lá?*/(string fraseOriginal, int vezes)
+        {
+    
+            string resultado = fraseOriginal;
+    
+    
+            for (int i = 1; i < vezes; i++)
+            {
+    
+                resultado += " " + fraseOriginal;
+            }
+    
+            return resultado;
+        }
+    
+        static void AdicionarFrase(string frase1, string frase2)
+        {
+            Console.WriteLine(frase1 + " " + frase2);
+        }
+    
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Escreva uma frase qualquer: ");
+            string frase = Console.ReadLine();
+    
+            Console.WriteLine("Você quer multiplicar a frase ou adicionar mais frases? (M/A)");
+            string escolha = Console.ReadLine().ToUpper(); 
+    
+            if (escolha == "M")
+            {
+                Console.WriteLine("Escreva quantas repetições você quer:"); 
+                
+    
+                int multiplicador = int.Parse(Console.ReadLine());
+                
+                Console.WriteLine(MultiplicarFrase(frase, multiplicador));
+            }
+            else if (escolha == "A")
+            {
+                Console.WriteLine("Escreva uma outra frase:");
+                string novaFrase = Console.ReadLine();
+                /*qual metodo deve ser inserido aqui?*/(frase, novaFrase);
+            }
+            else
+            {
+                Console.WriteLine("Opção inválida.");
+            }
+        }
+    }
 
 
 ### Exercício n° 5
 
+Mais um exercício simples, porem com vetores, neste exercício, você criará um array, e escreverá os 5 primeiros numeros e o vetor invertido
 
+Código:
 
-vetor 
+    int tamanhoArray = 10;
+    /*como declaramos um vetor?*/ numeros = new double[tamanhoArray];
+    
+    // primeira repetição para preencher os vetor
+    for (int i = e; i < tamanhoArray; i++)
+    {
+        Console.WriteLine($"Digite o {i + 1}º número:");
+        numeros[/*Qual deve ser o indice?*/] = Convert.ToDouble(Console.ReadLine());
+    }
+    
+    // vetor que vai receber o numero na ordem invertida
+    
+    /*como declaramos um vetor?*/ numerosinvertidos = new double[tamanhoArray];
+    
+    for (int i = 0; i < tamanhoArray; i++)
+    {
+        // preenchendo o vetor na ordem invertida
+        numerosinvertidos[i] = numeros[/*Qual deve ser o indice?*/];
+    }
+    
+    // vetor que vai receber a metade dos números
+    
+    /*como declaramos um vetor?*/ metadenumeros = new double[/*Qual deve ser o indice?*/];
+    
+    for (int i = 0; i < tamanhoArray / 2; i++)
+    {
+        
+        metadenumeros[/*Qual deve ser o indice?*/] = numeros[/*Qual deve ser o indice?*/];
+    }
+    
+    // exibindo os números na ordem invertida
+    Console.WriteLine("Números na ordem invertida:");
+    for (int i = 0; i < tamanhoArray; i++)
+    {
+        Console.WriteLine(numerosinvertidos[i]);
+    }
+    
+    // exibindo a metade dos números
+    Console.WriteLine("Metade dos números:");
+    for (int i = 0; i < tamanhoArray / 2; i++)
+    {
+        Console.WriteLine(metadenumeros[i]);
+    }
+
 
 
 
