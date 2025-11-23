@@ -202,9 +202,142 @@ Código:
 
 ### Exercício n° 3
 
+Neste exercício, você deve escrever uma palavra ou nome, e dizer quantidade de vogais, consoantes, espaços, caracteres especiais, vogais acentuadas e vogais maiusculas e consoantes maiusculas.
 
+Codigo:
 
-repetição
+    string entrada;
+
+    // loop para sempre repetir o programa
+
+    /*qual estrutura de repetição devemos usar, while, do-while, for, foreach?*/
+    {
+       Console.WriteLine("Escreva uma palavra ou frase:");
+       entrada = Console.ReadLine();
+       char[] dividir = entrada.ToCharArray();
+
+       // Arrays declarados aqui, mas só serão criados depois de contarmos
+       char[] vogais;
+       char[] consoantes;
+    
+       int contadorvogais = 0, contadorconsoantes = 0, contadorespacos = 0, contadoroutroscaracteres = 0;
+    
+       // repetição para contar quantas vogais e consoantes existem na frase
+    
+       /*qual estrutura de repetição devemos usar, while, do-while, for, foreach?*/
+       (int i = 0; i < dividir.Length; i++)
+        {
+          if (dividir[i] == 'a' || dividir[i] == 'e' || dividir[i] == 'i' || dividir[i] == 'o' || dividir[i] == 'u' ||
+              dividir[i] == 'A' || dividir[i] == 'E' || dividir[i] == 'I' || dividir[i] == 'O' || dividir[i] == 'U' ||
+              dividir[i] == 'á' || dividir[i] == 'é' || dividir[i] == 'í' || dividir[i] == 'ó' || dividir[i] == 'ú' ||
+              dividir[i] == 'Á' || dividir[i] == 'É' || dividir[i] == 'Í' || dividir[i] == 'Ó' || dividir[i] == 'Ú' ||
+              dividir[i] == 'à' || dividir[i] == 'è' || dividir[i] == 'ì' || dividir[i] == 'ò' || dividir[i] == 'ù' ||
+              dividir[i] == 'À' || dividir[i] == 'È' || dividir[i] == 'Ì' || dividir[i] == 'Ò' || dividir[i] == 'Ù' ||
+              dividir[i] == 'ã' || dividir[i] == 'õ' || dividir[i] == 'Ã' || dividir[i] == 'Õ' ||
+              dividir[i] == 'â' || dividir[i] == 'ê' || dividir[i] == 'î' || dividir[i] == 'ô' || dividir[i] == 'û' ||
+              dividir[i] == 'Â' || dividir[i] == 'Ê' || dividir[i] == 'Î' || dividir[i] == 'Ô' || dividir[i] == 'Û')
+          {
+             contadorvogais++;
+          }
+          else if (dividir[i] == ' ')
+          {
+             contadorespacos++;
+          }
+          else if ((dividir[i] >= 'b' && dividir[i] <= 'z') || (dividir[i] >= 'B' && dividir[i] <= 'Z'))
+          {
+             contadorconsoantes++;
+          }
+          else
+          {
+             contadoroutroscaracteres++;
+          }
+       }
+    
+       // criar os arrays com o tamanho exato
+       vogais = new char[contadorvogais];
+       consoantes = new char[contadorconsoantes];
+    
+       int indiceVogal = 0;
+       int indiceConsoante = 0;
+    
+       // preencher novo array com vogais e consoantes
+    
+    
+       /*qual estrutura de repetição devemos usar, while, do-while, for, foreach?*/
+       (int i = 0; i < dividir.Length; i++)
+        {
+          if (dividir[i] == 'a' || dividir[i] == 'e' || dividir[i] == 'i' || dividir[i] == 'o' || dividir[i] == 'u' ||
+              dividir[i] == 'A' || dividir[i] == 'E' || dividir[i] == 'I' || dividir[i] == 'O' || dividir[i] == 'U' ||
+              dividir[i] == 'á' || dividir[i] == 'é' || dividir[i] == 'í' || dividir[i] == 'ó' || dividir[i] == 'ú' ||
+              dividir[i] == 'Á' || dividir[i] == 'É' || dividir[i] == 'Í' || dividir[i] == 'Ó' || dividir[i] == 'Ú' ||
+              dividir[i] == 'à' || dividir[i] == 'è' || dividir[i] == 'ì' || dividir[i] == 'ò' || dividir[i] == 'ù' ||
+              dividir[i] == 'À' || dividir[i] == 'È' || dividir[i] == 'Ì' || dividir[i] == 'Ò' || dividir[i] == 'Ù' ||
+              dividir[i] == 'ã' || dividir[i] == 'õ' || dividir[i] == 'Ã' || dividir[i] == 'Õ' ||
+              dividir[i] == 'â' || dividir[i] == 'ê' || dividir[i] == 'î' || dividir[i] == 'ô' || dividir[i] == 'û' ||
+              dividir[i] == 'Â' || dividir[i] == 'Ê' || dividir[i] == 'Î' || dividir[i] == 'Ô' || dividir[i] == 'Û')
+          {
+             vogais[indiceVogal] = dividir[i];
+             indiceVogal++;
+          }
+          else if ((dividir[i] >= 'b' && dividir[i] <= 'z') || (dividir[i] >= 'B' && dividir[i] <= 'Z'))
+          {
+             if (dividir[i] != ' ')
+             {
+                consoantes[indiceConsoante] = dividir[i];
+                indiceConsoante++;
+             }
+          }
+       }
+
+       // contar vogais acentuadas e maiúsculas
+    
+       int contadorvogaisacentudas = 0;
+       int contadorvogaismaisculas = 0;
+       int contadorconsoantesmaisculas = 0;
+    
+       /*qual estrutura de repetição devemos usar, while, do-while, for, foreach?*/
+       (char vogal in vogais)
+        {
+          if (vogal == 'á' || vogal == 'é' || vogal == 'í' || vogal == 'ó' || vogal == 'ú' ||
+              vogal == 'Á' || vogal == 'É' || vogal == 'Í' || vogal == 'Ó' || vogal == 'Ú' ||
+              vogal == 'à' || vogal == 'è' || vogal == 'ì' || vogal == 'ò' || vogal == 'ù' ||
+              vogal == 'À' || vogal == 'È' || vogal == 'Ì' || vogal == 'Ò' || vogal == 'Ù' ||
+              vogal == 'ã' || vogal == 'õ' || vogal == 'Ã' || vogal == 'Õ' ||
+              vogal == 'â' || vogal == 'ê' || vogal == 'î' || vogal == 'ô' || vogal == 'û' ||
+              vogal == 'Â' || vogal == 'Ê' || vogal == 'Î' || vogal == 'Ô' || vogal == 'Û')
+          {
+             contadorvogaisacentudas++;
+          }
+    
+    
+          if (vogal == 'Á' || vogal == 'É' || vogal == 'Í' || vogal == 'Ó' || vogal == 'Ú' ||
+              vogal == 'À' || vogal == 'È' || vogal == 'Ì' || vogal == 'Ò' || vogal == 'Ù' ||
+              vogal == 'Â' || vogal == 'Ê' || vogal == 'Î' || vogal == 'Ô' || vogal == 'Û' ||
+              vogal == 'Ã' || vogal == 'Õ' ||
+              vogal == 'A' || vogal == 'E' || vogal == 'I' || vogal == 'O' || vogal == 'U')
+          {
+             contadorvogaismaisculas++;
+          }
+       }
+    
+    
+       /*qual estrutura de repetição devemos usar, while, do-while, for, foreach?*/ (char consoante in consoantes)
+        {
+          if (consoante >= 'B' && consoante <= 'Z')
+          {
+             contadorconsoantesmaisculas++;
+          }
+       }
+    
+       Console.WriteLine($"\nNúmero de vogais: {contadorvogais}");
+       Console.WriteLine($"Número de consoantes: {contadorconsoantes}");
+       Console.WriteLine($"Número de espaços: {contadorespacos}");
+       Console.WriteLine($"Número de outros caracteres: {contadoroutroscaracteres}");
+       Console.WriteLine($"Número de vogais acentuadas: {contadorvogaisacentudas}");
+       Console.WriteLine($"Número de vogais maiúsculas: {contadorvogaismaisculas}");
+       Console.WriteLine($"Número de consoantes maiúsculas: {contadorconsoantesmaisculas}\n");
+    
+        } while (entrada != "0") ;
 
 
 
