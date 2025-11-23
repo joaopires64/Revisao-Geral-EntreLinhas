@@ -38,7 +38,7 @@ Código:
 
      
 
-     Console.WriteLine("Escreva se você é do sexo feminino 'm' = masculino, 'f' = feminino");
+     Console.WriteLine("Escreva se você é do sexo: 'm' = masculino, 'f' = feminino");
 
      /*Qual o tipo mais adequado para sexo*/ sexo = /*tipo*/.Parse(Console.ReadLine());
 
