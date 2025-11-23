@@ -38,15 +38,15 @@ Código:
 
      
 
-     Console.WriteLine("Escreva se você é do sexo: 'm' = masculino, 'f' = feminino");
+     Console.WriteLine("Escreva se você é do genero: 'm' = masculino, 'f' = feminino");
 
-     /*Qual o tipo mais adequado para sexo*/ sexo = /*tipo*/.Parse(Console.ReadLine());
+     /*Qual o tipo mais adequado para genero*/ genero = /*tipo*/.Parse(Console.ReadLine());
 
      
 
      do{
 
-     if (sexo == 'm' || sexo == 'f')
+     if (genero == 'm' || genero == 'f')
 
      {
 
@@ -62,7 +62,7 @@ Código:
 
      }
 
-     }while (sexo != 'm' && sexo != 'f');
+     }while (genero != 'm' && genero != 'f');
 
      
 
@@ -94,7 +94,7 @@ Código:
 
      {
 
-         Console.WriteLine("Seu nome é " + nome + ", você tem " + idade + " anos, sua altura é " + altura + " metros, você é do sexo " + sexo + " e você é um estudante.");
+         Console.WriteLine("Seu nome é " + nome + ", você tem " + idade + " anos, sua altura é " + altura + " metros, você é do genero " + genero + " e você é um estudante.");
 
      }
 
